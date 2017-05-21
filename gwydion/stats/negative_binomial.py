@@ -69,7 +69,7 @@ class NegativeBinomial(DiscreteProbDist):
             'p': self.random.uniform(0.1, 0.9)
         }
 
-        for key, val in defaults.items():
+        for key, val in list(defaults.items()):
             if locals()[key] is None:
                 setattr(self, key, val)
             else:

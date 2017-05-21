@@ -71,7 +71,7 @@ class Hypergeometric(DiscreteProbDist):
             'm': self.random.random_integers(5, 15)
         }
 
-        for key, val in defaults.items():
+        for key, val in list(defaults.items()):
             if locals()[key] is None:
                 setattr(self, key, val)
             else:

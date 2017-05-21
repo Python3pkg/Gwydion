@@ -63,7 +63,7 @@ class Poisson(DiscreteProbDist):
 
         defaults = {'lam': self.random.rand() * 30}
 
-        for key, val in defaults.items():
+        for key, val in list(defaults.items()):
             if locals()[key] is None:
                 setattr(self, key, val)
             else:

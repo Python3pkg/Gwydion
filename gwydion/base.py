@@ -108,7 +108,7 @@ class Base(ABC):
         v = vars(self)
         spec = getfullargspec(self.__class__)
 
-        s = '{}(' + ', '.join(['{}={}'.format(key, val) for key, val in v.items() if key in spec.args]) + ')'
+        s = '{}(' + ', '.join(['{}={}'.format(key, val) for key, val in list(v.items()) if key in spec.args]) + ')'
 
         return s.format(self.__class__.__name__)
 

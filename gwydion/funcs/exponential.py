@@ -55,7 +55,7 @@ class Exponential(Base):
                     'I': 1.0 + (self.random.rand() - 0.5) * 0.5,
                     'k': (self.random.rand() - 0.5) * 0.5}
 
-        for key, val in defaults.items():
+        for key, val in list(defaults.items()):
             if locals()[key] is None:
                 setattr(self, key, val)
             else:
